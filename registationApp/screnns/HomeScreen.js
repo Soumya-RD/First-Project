@@ -19,7 +19,7 @@ const HomeScreen = ({ route, navigation }) => {
 
     const renderItem = ({ item }) => (
         <View style={styles.row}>
-            <Text style={styles.cell}>{item.sl}</Text>
+            {/* <Text style={styles.cell}>{item.sl}</Text>
             <TextInput
                 style={styles.cell}
                 value={item.task}
@@ -37,7 +37,7 @@ const HomeScreen = ({ route, navigation }) => {
                 value={item.operation}
                 onChangeText={(text) => handleChange(item.id, 'operation', text)}
                 placeholder="Enter operation"
-            />
+            /> */}
         </View>
     );
 
@@ -49,6 +49,16 @@ const HomeScreen = ({ route, navigation }) => {
                 <Text style={[styles.headerText, styles.headerTask]}>Task Name</Text>
                 <Text style={[styles.headerText, styles.headerTime]}>Time</Text>
                 <Text style={[styles.headerText, styles.headerOperation]}>Operation</Text>
+            </View>
+            <View style={styles.DomeData}>
+                {/* Dome items */}
+                <Text style={[styles.DomeText, styles.DomeBackground]}>1</Text>
+                <Text style={[styles.DomeText, styles.DomeBackground]}>GetUP</Text>
+                <Text style={[styles.DomeText, styles.DomeBackground]}>7:00 AM</Text>
+
+                <Text style={[styles.DomeText, styles.DomeBackground]}>Operation</Text>
+
+
             </View>
             <FlatList
                 data={rows}
@@ -77,7 +87,26 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
         paddingVertical: 10,
         paddingHorizontal: 5,
-        marginBottom: 10,
+        // marginBottom: 10,
+    },
+    DomeData: {
+        flexDirection: 'row',
+        // backgroundColor: '#000',
+        // paddingVertical: 10,
+        // paddingHorizontal: 5,
+        marginTop: 5,
+        // width:3
+
+    },
+    DomeText: {
+        flex: 1,
+        color: '#000',
+        fontWeight: 'bold',
+        textAlign: 'center',
+
+    },
+    DomeBackground: {
+
     },
     headerText: {
         flex: 1,
