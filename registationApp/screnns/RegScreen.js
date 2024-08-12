@@ -9,7 +9,7 @@ export default function App({navigation}) {
 
     const handleRegister = async () => {
         try {
-            const response = await axios.post('http:// 192.168.244.200:3011/master', {
+            const response = await axios.post('http://192.168.244.200:3011/master', {
                 username,
                 email,
                 password,
