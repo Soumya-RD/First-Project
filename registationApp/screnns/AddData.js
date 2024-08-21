@@ -1,13 +1,13 @@
 import { Button, StyleSheet, Text, TextInput, View, Alert } from 'react-native';
 import React, { useState } from 'react';
 
-const AddData = () => {
+const AddData = ({ navigation }) => {
   const [taskName, setTaskName] = useState('');
   const [time, setTime] = useState('');
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://192.168.244.200:3011/tasks', { // Use your server's URL
+      const response = await fetch('http://192.168.55.200:3011/tasks', { // Use your server's URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ const AddData = () => {
       }
 
       const result = await response.json();
-      Alert.alert('Success', `Task added: ${result.name}`);
+      navigation.navigate('HomeScreen');
     } catch (error) {
       Alert.alert('Error', error.message);
     }

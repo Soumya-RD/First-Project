@@ -9,14 +9,14 @@ const LoginScreen = ({ navigation }) => {
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post('http://192.168.244.200:3011/master/login', {
+            const response = await axios.post('http://192.168.55.200:3011/master/login', {
                 username,
                 password,
             });
 
             if (response.data && response.data.username) {
                 setUserNameFromServer(response.data.username); // Update state with username
-                Alert.alert("Success", `Hello, ${response.data.username}!`);
+                // Alert.alert("Success", `Hello, ${response.data.username}!`);
 
                 // Pass the username to the HomeScreen
                 navigation.navigate('HomeScreen', { username: response.data.username });
